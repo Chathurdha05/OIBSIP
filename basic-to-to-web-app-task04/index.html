@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student To-Do App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <h1>Student To-Do App</h1>
+
+    <!-- Task Input Section -->
+    <div class="task-input">
+      <h2>Add Task</h2>
+      <label for="taskInput">Task</label>
+      <input type="text" id="taskInput" placeholder="Enter your task">
+      <label for="category">Category</label>
+      <select id="category">
+        <option value="study">Study Task</option>
+        <option value="personal">Personal Task</option>
+      </select>
+      <label for="priority">Priority</label>
+      <select id="priority">
+        <option value="high">High Priority</option>
+        <option value="medium">Medium Priority</option>
+        <option value="low">Low Priority</option>
+      </select>
+      <label for="dueDate">Due Date</label>
+      <input type="date" id="dueDate">
+      <button id="addTaskButton">Add Task</button>
+    </div>
+
+    <!-- Special Events Input Section -->
+    <div class="special-event-input">
+      <h2>Add Special Event</h2>
+      <label for="eventNameInput">Event Name</label>
+      <input type="text" id="eventNameInput" placeholder="Enter event name">
+      <label for="eventDescriptionInput">Description</label>
+      <textarea id="eventDescriptionInput" placeholder="Enter event description (optional)"></textarea>
+      <label for="eventDateInput">Event Date</label>
+      <input type="date" id="eventDateInput">
+      <label for="eventTimeInput">Event Time</label>
+      <input type="time" id="eventTimeInput">
+      <button id="addEventButton">Add Event</button>
+    </div>
+
+    <!-- Tasks Section -->
+    <div class="task-sections">
+      <h2 class="toggle-header" onclick="toggleDropdown('tasksDropdown')">Tasks ▼</h2>
+      <div id="tasksDropdown" class="dropdown-content">
+        <div class="task-category">
+          <h3 class="toggle-header" onclick="toggleDropdown('pendingTasksDropdown')">Pending Tasks ▼</h3>
+          <div id="pendingTasksDropdown" class="dropdown-content">
+            <h4>Pending Study Tasks</h4>
+            <ul id="studyPendingTasksList"></ul>
+            <h4>Pending Personal Tasks</h4>
+            <ul id="personalPendingTasksList"></ul>
+          </div>
+          <h3 class="toggle-header" onclick="toggleDropdown('completedTasksDropdown')">Completed Tasks ▼</h3>
+          <div id="completedTasksDropdown" class="dropdown-content">
+            <h4>Completed Study Tasks</h4>
+            <ul id="studyCompletedTasksList"></ul>
+            <h4>Completed Personal Tasks</h4>
+            <ul id="personalCompletedTasksList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Special Events Section -->
+    <div class="special-events-category">
+      <h2 class="toggle-header" onclick="toggleDropdown('specialEventsDropdown')">Special Events ▼</h2>
+      <div id="specialEventsDropdown" class="dropdown-content">
+        <h3 class="toggle-header" onclick="toggleDropdown('upcomingEventsDropdown')">Upcoming Events ▼</h3>
+        <div id="upcomingEventsDropdown" class="dropdown-content">
+          <ul id="upcomingEventsList"></ul>
+        </div>
+        <h3 class="toggle-header" onclick="toggleDropdown('pastEventsDropdown')">Past Events ▼</h3>
+        <div id="pastEventsDropdown" class="dropdown-content">
+          <ul id="pastEventsList"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
